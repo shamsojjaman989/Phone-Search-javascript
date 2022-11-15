@@ -2,6 +2,9 @@
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
+const toggleSerachResult = displayStyle => {
+    document.getElementById('card-section').style.display = displayStyle;
+}
 
 // search Phone in input 
 const searchPhoneData = () => {
@@ -11,7 +14,8 @@ const searchPhoneData = () => {
     loadPhoneData(searchInput);
     document.getElementById('search-field').value = '';
     // display spinner 
-    toggleSpinner('block')
+    toggleSpinner('block');
+    toggleSerachResult('none');
 }
 
 
@@ -56,6 +60,7 @@ const displayPhone = phones => {
     }
 
     toggleSpinner('none')
+    toggleSerachResult('block')
         // console.log(phone);
 }
 loadPhoneData('iphone');
