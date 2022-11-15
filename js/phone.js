@@ -6,7 +6,6 @@ const toggleSerachResult = displayStyle => {
     document.getElementById('card-section').style.display = displayStyle;
 }
 
-
 // search Phone in input 
 const searchPhoneData = () => {
     // console.log('checked')
@@ -18,7 +17,6 @@ const searchPhoneData = () => {
     toggleSpinner('block');
     toggleSerachResult('none');
 }
-
 
 // load data from api 
 const loadPhoneData = searchPhone => {
