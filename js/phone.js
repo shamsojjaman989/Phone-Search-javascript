@@ -6,6 +6,7 @@ const toggleSerachResult = displayStyle => {
     document.getElementById('card-section').style.display = displayStyle;
 }
 
+
 // search Phone in input 
 const searchPhoneData = () => {
     // console.log('checked')
@@ -30,14 +31,21 @@ const loadPhoneData = searchPhone => {
 const displayPhone = phones => {
     const cardGrp = document.getElementById('card-grp');
     cardGrp.textContent = '';
-    if (!phones) {
+    if (phones.length == 0) {
         const notFound = document.getElementById('not-found');
+        notFound.style.display = 'block'
+            // toggleNotFound('block');
+            // console.log('not found')
+
         const head4 = document.createElement('h4');
         head4.innerText = 'Not Found';
         notFound.appendChild(head4);
-        console.log('not found');
+        // console.log('phones');
+        // document.getElementById('not-found').value = '';
     } else {
-        for (const phone of phones) {
+        const notFound = document.getElementById('not-found');
+        notFound.style.display = 'none';
+        phones.forEach(phone => {
             const cards = document.createElement('card');
             cards.classList.add('cards');
             cards.innerHTML = `
@@ -54,13 +62,12 @@ const displayPhone = phones => {
             `;
             cardGrp.appendChild(cards);
 
-            // console.log(phone);
-        }
-
+        })
     }
 
     toggleSpinner('none')
-    toggleSerachResult('block')
-        // console.log(phone);
+    toggleSerachResult('block');
+
+    // console.log(phone);
 }
 loadPhoneData('iphone');
