@@ -1,3 +1,7 @@
 .input-field {
     width: 40%;
 }
+
+#spinner {
+    display: none;
+}
